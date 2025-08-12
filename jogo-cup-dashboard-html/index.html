@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO CUP - Dashboard del Torneo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="jogo-header">
+        <div class="background-particles"></div>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <img src="logo.png" alt="JOGO CUP Logo" class="logo logo-glow">
+                    </div>
+                    <div class="title-section">
+                        <h1 class="gradient-text">JOGO CUP</h1>
+                        <p class="subtitle">1ª Edición - Dashboard del Torneo</p>
+                    </div>
+                </div>
+                <div class="time-section glow-effect">
+                    <div class="current-time" id="currentTime">00:00:00</div>
+                    <div class="time-label">Tiempo actual</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+        <!-- Navigation Tabs -->
+        <div class="tabs-container">
+            <div class="tabs-list">
+                <button class="tab-trigger active" data-tab="overview">
+                    <i class="fas fa-trophy"></i>
+                    Resumen
+                </button>
+                <button class="tab-trigger" data-tab="groups">
+                    <i class="fas fa-users"></i>
+                    Grupos
+                </button>
+                <button class="tab-trigger" data-tab="schedule">
+                    <i class="fas fa-calendar"></i>
+                    Calendario
+                </button>
+                <button class="tab-trigger" data-tab="activities">
+                    <i class="fas fa-bolt"></i>
+                    Actividades
+                </button>
+                <button class="tab-trigger" data-tab="results">
+                    <i class="fas fa-award"></i>
+                    Resultados
+                </button>
+                <button class="tab-trigger" data-tab="under16">
+                    <i class="fas fa-user-check"></i>
+                    Sub-16
+                </button>
+                <button class="tab-trigger" data-tab="streaming">
+                    <i class="fas fa-video"></i>
+                    En Vivo
+                </button>
+                <button class="tab-trigger" data-tab="budget">
+                    <i class="fas fa-euro-sign"></i>
+                    Presupuesto
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Contents -->
+        
+        <!-- Overview Tab -->
+        <div class="tab-content active animate-fade-in" id="overview">
+            <div class="stats-grid">
+                <div class="jogo-card stats-card">
+                    <div class="card-content">
+                        <div class="stat-item">
+                            <div class="stat-icon bg-blue">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <p class="stat-label">Total Equipos</p>
+                                <p class="stat-value jogo-primary">24</p>
+                                <p class="stat-detail">6 grupos de 4</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jogo-card stats-card">
+                    <div class="card-content">
+                        <div class="stat-item">
+                            <div class="stat-icon bg-cyan">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-info">
+                                <p class="stat-label">Total Partidos</p>
+                                <p class="stat-value jogo-secondary">51</p>
+                                <p class="stat-detail">Grupos + 15 eliminatorias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jogo-card stats-card">
+                    <div class="card-content">
+                        <div class="stat-item">
+                            <div class="stat-icon bg-yellow">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <p class="stat-label">Duración</p>
+                                <p class="stat-value jogo-accent">3</p>
+                                <p class="stat-detail">Días de competición</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jogo-card stats-card">
+                    <div class="card-content">
+                        <div class="stat-item">
+                            <div class="stat-icon bg-green">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="stat-info">
+                                <p class="stat-label">Premio Mayor</p>
+                                <p class="stat-value text-green">2.000€</p>
+                                <p class="stat-detail">Campeón</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-grid">
+                <div class="jogo-card">
+                    <div class="card-header">
+                        <h3 class="card-title jogo-primary">
+                            <i class="fas fa-calendar"></i>
+                            Cronograma del Torneo
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="schedule-item border-blue">
+                            <div class="schedule-info">
+                                <h4 class="schedule-day">Viernes 26</h4>
+                                <p class="schedule-desc">Fase de Grupos (12 partidos)</p>
+                            </div>
+                            <div class="schedule-time">
+                                <div class="time-bold">17:00 - 23:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="schedule-item border-cyan">
+                            <div class="schedule-info">
+                                <h4 class="schedule-day">Sábado 27</h4>
+                                <p class="schedule-desc">Fase de Grupos (24 partidos)</p>
+                            </div>
+                            <div class="schedule-time">
+                                <div class="time-bold">10:00 - 22:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="schedule-item border-yellow">
+                            <div class="schedule-info">
+                                <h4 class="schedule-day">Domingo 28</h4>
+                                <p class="schedule-desc">Fase Final (15 partidos)</p>
+                            </div>
+                            <div class="schedule-time">
+                                <div class="time-bold">10:00 - 18:00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jogo-card">
+                    <div class="card-header">
+                        <h3 class="card-title jogo-primary">
+                            <i class="fas fa-trophy"></i>
+                            Premios y Reconocimientos
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="prize-item prize-gold">
+                            <div class="prize-info">
+                                <i class="fas fa-trophy prize-icon"></i>
+                                <div>
+                                    <h4 class="prize-title">Campeón</h4>
+                                    <p class="prize-desc">Primer lugar</p>
+                                </div>
+                            </div>
+                            <div class="prize-amount">2.000€</div>
+                        </div>
+                        
+                        <div class="prize-item prize-silver">
+                            <div class="prize-info">
+                                <i class="fas fa-award prize-icon"></i>
+                                <div>
+                                    <h4 class="prize-title">Subcampeón</h4>
+                                    <p class="prize-desc">Segundo lugar</p>
+                                </div>
+                            </div>
+                            <div class="prize-amount">700€</div>
+                        </div>
+                        
+                        <div class="prize-item prize-special">
+                            <div class="prize-info">
+                                <i class="fas fa-bolt prize-icon"></i>
+                                <div>
+                                    <h4 class="prize-title">Beneficios Adicionales</h4>
+                                    <p class="prize-desc">Privilegios en las fiestas de Utebo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Groups Tab -->
+        <div class="tab-content animate-fade-in" id="groups">
+            <div class="groups-grid" id="groupsContainer">
+                <!-- Los grupos se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+
+        <!-- Schedule Tab -->
+        <div class="tab-content animate-fade-in" id="schedule">
+            <div class="schedule-controls">
+                <button class="btn btn-primary active" data-day="friday">
+                    <i class="fas fa-calendar"></i>
+                    Viernes
+                </button>
+                <button class="btn btn-outline" data-day="saturday">
+                    <i class="fas fa-calendar"></i>
+                    Sábado
+                </button>
+                <button class="btn btn-outline" data-day="sunday">
+                    <i class="fas fa-calendar"></i>
+                    Domingo
+                </button>
+            </div>
+            
+            <div class="jogo-card">
+                <div class="card-header">
+                    <h3 class="card-title jogo-primary" id="scheduleTitle">
+                        <i class="fas fa-calendar"></i>
+                        Viernes - Fase de Grupos
+                    </h3>
+                    <p class="schedule-date" id="scheduleDate">26 de Diciembre, 2025</p>
+                </div>
+                <div class="card-content">
+                    <div class="matches-container" id="matchesContainer">
+                        <!-- Los partidos se generarán dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activities Tab -->
+        <div class="tab-content animate-fade-in" id="activities">
+            <div class="jogo-card">
+                <div class="card-header">
+                    <h3 class="card-title jogo-primary">
+                        <i class="fas fa-bolt"></i>
+                        Actividades Especiales
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="activities-grid">
+                        <div class="activity-card activity-high">
+                            <div class="activity-header">
+                                <div class="activity-icon bg-red">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <span class="badge badge-red">Destacada</span>
+                            </div>
+                            <h4 class="activity-title">1 vs 1</h4>
+                            <p class="activity-desc">Competencia individual destacada</p>
+                        </div>
+
+                        <div class="activity-card activity-medium">
+                            <div class="activity-header">
+                                <div class="activity-icon bg-blue">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <span class="badge badge-blue">Especial</span>
+                            </div>
+                            <h4 class="activity-title">Crossbar Challenge</h4>
+                            <p class="activity-desc">Desafío de precisión</p>
+                        </div>
+
+                        <div class="activity-card activity-medium">
+                            <div class="activity-header">
+                                <div class="activity-icon bg-blue">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <span class="badge badge-blue">Especial</span>
+                            </div>
+                            <h4 class="activity-title">Concurso de Toques</h4>
+                            <p class="activity-desc">Habilidad técnica en duplas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Tab -->
+        <div class="tab-content animate-fade-in" id="results">
+            <div class="results-header">
+                <div>
+                    <h2 class="results-title jogo-primary">Resultados en Vivo</h2>
+                    <p class="results-subtitle">Última actualización: <span id="lastUpdate">--:--</span></p>
+                </div>
+                <button class="btn btn-outline" onclick="refreshResults()">
+                    <i class="fas fa-sync-alt"></i>
+                    Actualizar
+                </button>
+            </div>
+
+            <!-- Partidos en curso -->
+            <div class="jogo-card" id="currentMatchesCard">
+                <div class="card-header">
+                    <h3 class="card-title jogo-primary">
+                        <i class="fas fa-clock"></i>
+                        Partidos en Curso
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div id="currentMatches">
+                        <!-- Se generará dinámicamente -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estadísticas del día -->
+            <div class="stats-grid">
+                <div class="jogo-card stats-card">
+                    <div class="card-content">
+                        <div class="stat-item">
+                            <div class="stat-icon bg-blue">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-info">
+                                <p class="stat-label">Partidos Jugados</p>
+                                <p class="stat-value jogo-primary">8</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jogo-card stats-card">
+                    <div class="card-content">
+                        <div class="stat-item">
+                            <div class="stat-icon bg-yellow">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="stat-info">
+                                <p class="stat-label">Goles Marcados</p>
+                                <p class="stat-value jogo-accent">24</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jogo-card stats-card">
+                    <div class="card-content">
+                        <div class="stat-item">
+                            <div class="stat-icon bg-green">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <p class="stat-label">Actividades</p>
+                                <p class="stat-value jogo-secondary">2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Under16 Tab -->
+        <div class="tab-content animate-fade-in" id="under16">
+            <div class="jogo-card">
+                <div class="card-header">
+                    <h3 class="card-title jogo-primary">
+                        <i class="fas fa-user-check"></i>
+                        Maratón Sub-16
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="under16-info">
+                        <div class="info-section">
+                            <h4>Información General</h4>
+                            <p>Torneo especial para jugadores menores de 16 años</p>
+                            <p><strong>Fecha límite de inscripción:</strong> 20 de Junio de 2024 - 14:00 horas</p>
+                            <p><strong>Contacto:</strong> info@jogocup.com</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h4>Documentación Requerida</h4>
+                            <ul>
+                                <li>Hoja de inscripción completa</li>
+                                <li>Autorización de menores firmada</li>
+                                <li>Copia del DNI del menor</li>
+                                <li>Copia del DNI del tutor legal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Streaming Tab -->
+        <div class="tab-content animate-fade-in" id="streaming">
+            <div class="jogo-card">
+                <div class="card-header">
+                    <h3 class="card-title jogo-primary">
+                        <i class="fas fa-video"></i>
+                        Transmisión en Vivo
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="streaming-grid">
+                        <div class="stream-card">
+                            <div class="stream-placeholder">
+                                <i class="fas fa-video"></i>
+                                <h4>Campo 1</h4>
+                                <p>Cámara principal</p>
+                                <span class="viewers">👥 245 viewers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stream-card">
+                            <div class="stream-placeholder">
+                                <i class="fas fa-video"></i>
+                                <h4>Campo 2</h4>
+                                <p>Cámara secundaria</p>
+                                <span class="viewers">👥 189 viewers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stream-card">
+                            <div class="stream-placeholder">
+                                <i class="fas fa-video"></i>
+                                <h4>Vista General</h4>
+                                <p>Panorámica del evento</p>
+                                <span class="viewers">👥 312 viewers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stream-card">
+                            <div class="stream-placeholder">
+                                <i class="fas fa-video"></i>
+                                <h4>Zona de Actividades</h4>
+                                <p>1vs1 y actividades especiales</p>
+                                <span class="viewers">👥 156 viewers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget Tab -->
+        <div class="tab-content animate-fade-in" id="budget">
+            <div class="jogo-card">
+                <div class="card-header text-center">
+                    <h3 class="card-title jogo-primary">
+                        <i class="fas fa-euro-sign"></i>
+                        Presupuesto del Torneo
+                    </h3>
+                    <div class="budget-total">
+                        <div class="total-amount jogo-accent">15.750€</div>
+                        <p class="total-desc">Inversión total para el evento</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="budget-grid" id="budgetGrid">
+                <!-- Se generará dinámicamente -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="jogo-header footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>JOGO CUP 1ª Edición - Dashboard Oficial del Torneo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
