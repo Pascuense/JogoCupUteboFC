@@ -1,0 +1,96 @@
+/* Fondo de página */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    var(--jogo-blue-persa) 0%, 
+    #2563eb 15%, 
+    var(--jogo-robin-blue) 35%, 
+    #06b6d4 55%, 
+    var(--jogo-yellow) 80%, 
+    #fbbf24 100%);
+  padding: 2rem;
+}
+
+/* Panel grande central */
+.login-panel {
+  width: 100%;
+  max-width: 500px;
+  background: #e7fbff;
+  backdrop-filter: blur(25px);
+  padding: 3.5rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-panel:hover {
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+}
+
+/* Icono degradado grande */
+.login-icon {
+  font-size: 5rem;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6, #facc15);
+  margin-bottom: 1.5rem;
+}
+
+/* Título */
+.gradient-text {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+/* Inputs */
+.login-form input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid var(--jogo-blue-persa);
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--jogo-blue-persa);
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-form input::placeholder {
+  color: var(--jogo-blue-persa);
+}
+
+.login-form input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+/* Botón */
+.login-form button {
+  width: 30%;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  border: 2px solid var(--jogo-yellow);
+  background: transparent;
+  color: var(--jogo-yellow);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6, #facc15);
+  transform: scale(1.03);
+  border: 2px solid transparent;
+  color: white;
+}
