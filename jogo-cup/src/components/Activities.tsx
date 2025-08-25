@@ -58,8 +58,10 @@ export default function Activities() {
                   </div>
                   <span className={`badge ${act.badgeClass}`}>{act.badge}</span>
                 </div>
-                <h4 className="activity-title">{act.title}</h4>
-                <p className="activity-desc">{act.desc}</p>
+                <div className="activity-content">
+                  <h4 className="activity-title">{act.title}</h4>
+                  <p className="activity-desc">{act.desc}</p>
+                </div>
               </div>
             ))}
           </div>

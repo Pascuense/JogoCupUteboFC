@@ -1,10 +1,12 @@
+import { FaChildReaching } from "react-icons/fa6";
+
 export default function Under16() {
   return (
     <div className="tab-content animate-fade-in">
       <div className="jogo-card">
         <div className="card-header">
           <h3 className="card-title jogo-primary">
-            <i className="fas fa-user-check"></i> Maratón Sub-16
+            <FaChildReaching /> Maratón Sub-16
           </h3>
         </div>
         <div className="card-content">

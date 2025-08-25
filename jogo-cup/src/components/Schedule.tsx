@@ -4,7 +4,7 @@ import { FaBolt } from "react-icons/fa6";
 import { ImCross } from "react-icons/im";
 import { CgMediaLive } from "react-icons/cg";
 import { FaCalendarDay } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { scheduleData } from "../data/scheduleData"; // Ajusta la ruta según tu estructura
 
 function getStatusBadgeClass(status: string) {
@@ -58,9 +58,24 @@ function getStatusText(status: string) {
   }
 }
 
+function useIsMobile(maxWidth: number = 400) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth <= maxWidth);
+    checkScreen(); // al cargar
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, [maxWidth]);
+
+  return isMobile;
+}
+
 export default function Schedule() {
   const [selectedDay, setSelectedDay] = useState<keyof typeof scheduleData>("friday");
   const currentDay = scheduleData[selectedDay];
+  const isMobile = useIsMobile(); // 👈 así ya tienes la variable booleana
 
   return (
     <div className="tab-content animate-fade-in" id="schedule">
@@ -104,14 +119,29 @@ export default function Schedule() {
                   <div className="match-time">
                     <div className="match-time-value jogo-primary">{match.time}</div>
                   </div>
-                  <div className="match-field">
-                    <i className="fas fa-map-marker-alt"><FaMapMarkerAlt /></i>
-                    <span>{match.field}</span>
-                  </div>
-                  <div className="match-teams">
-                    <div className="match-title">{match.teams[1]}</div>
-                    <div className="match-desc">{match.teams[0]}</div>
-                  </div>
+                    {isMobile ? (
+                      <>
+                        <div className="match-teams">
+                          <div className="match-title">{match.teams[1]}</div>
+                          <div className="match-desc">{match.teams[0]}</div>
+                        </div>
+                        <div className="match-field">
+                          <FaMapMarkerAlt className="icono-ubi"/>
+                          <span>{match.field}</span>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="match-field">
+                          <i className="fas fa-map-marker-alt"><FaMapMarkerAlt /></i>
+                          <span>{match.field}</span>
+                        </div>
+                        <div className="match-teams">
+                          <div className="match-title">{match.teams[1]}</div>
+                          <div className="match-desc">{match.teams[0]}</div>
+                        </div>
+                      </>
+                    )}
                 </div>
                 <div className={`match-status`}>
                   <span className={`badge ${getStatusBadgeClass(match.status)}`}>

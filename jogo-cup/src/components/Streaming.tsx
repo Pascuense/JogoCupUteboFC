@@ -1,3 +1,5 @@
+import { MdLiveTv } from "react-icons/md"
+
 export default function Streaming() {
   const streams = [
     { title: "Campo 1", desc: "Cámara principal", viewers: 245 },
@@ -11,7 +13,7 @@ export default function Streaming() {
       <div className="jogo-card">
         <div className="card-header">
           <h3 className="card-title jogo-primary">
-            <i className="fas fa-video"></i> Transmisión en Vivo
+            <MdLiveTv /> Transmisión en Vivo
           </h3>
         </div>
         <div className="card-content">

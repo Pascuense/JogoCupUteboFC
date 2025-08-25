@@ -127,10 +127,24 @@ return (
     </div>
 
     {isModalOpenGasto && (
-      <div className="modal-overlay"   
+      <div
+        className="modal-overlay"
         onClick={closeModalGasto} // clic en el fondo cierra el modal
-        style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', overflow: 'auto', backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 1000 }}>
-        <div className="modal-content">
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          overflow: 'auto',
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          zIndex: 1000,
+        }}
+      >
+        <div
+          className="modal-content"
+          onClick={(e) => e.stopPropagation()} // <-- evita que el clic dentro cierre el modal
+        >
           <h1 className="gradient-text">Añadir Nuevo Gasto</h1>
           <form onSubmit={handleSubmitGasto} className="modal-form">
             <label>
@@ -149,17 +163,34 @@ return (
               <input type="text" name="date" placeholder="Fecha" required />
             </label>
             <button type="submit">Guardar</button>
-            <button type="button" onClick={closeModalGasto}>Cancelar</button>
+            <button type="button" onClick={closeModalGasto}>
+              Cancelar
+            </button>
           </form>
         </div>
       </div>
     )}
 
+
     {isModalOpenIngreso && (
-      <div className="modal-overlay"   
+      <div
+        className="modal-overlay"
         onClick={closeModalIngreso} // clic en el fondo cierra el modal
-        style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', overflow: 'auto', backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 1000 }}>
-        <div className="modal-content">
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          overflow: 'auto',
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          zIndex: 1000,
+        }}
+      >
+        <div
+          className="modal-content"
+          onClick={(e) => e.stopPropagation()} // <-- evita que el clic dentro cierre el modal
+        >
           <h1 className="gradient-text">Añadir Nuevo Ingreso</h1>
           <form onSubmit={handleSubmitIngreso} className="modal-form">
             <label>
@@ -178,7 +209,9 @@ return (
               <input type="text" name="date" placeholder="Fecha" required />
             </label>
             <button type="submit">Guardar</button>
-            <button type="button" onClick={closeModalIngreso}>Cancelar</button>
+            <button type="button" onClick={closeModalIngreso}>
+              Cancelar
+            </button>
           </form>
         </div>
       </div>

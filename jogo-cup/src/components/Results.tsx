@@ -5,6 +5,8 @@ import { FiChevronDown } from "react-icons/fi";
 import { FaTrophy } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { IoIosFootball } from "react-icons/io";
+import { IoFootball } from "react-icons/io5";
+
 
 
 function getStatusText(status: string) {
@@ -83,8 +85,8 @@ export default function Results() {
 
       <div className="jogo-card schedule-card">
         <div className="card-header">
-          <h3 className="card-title jogo-primary">
-            <i className="fas fa-clock"></i> Partidos {currentFase.title}
+          <h3 className="results-card-title jogo-primary">
+            <IoFootball /> Partidos {currentFase.title}
           </h3>
         </div>
         <div className="card-content">

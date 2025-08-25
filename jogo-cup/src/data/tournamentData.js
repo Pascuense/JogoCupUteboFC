@@ -10,7 +10,7 @@ export const tournamentData = {
     end: '28 de Diciembre, 2025'
   },
   groups: [
-    { id: 'A', name: 'Grupo A', teams: ['Equipo A1', 'Equipo A2', 'Equipo A3', 'Equipo A4'] },
+    { id: 'A', name: 'Grupo A', teams: ['Utebo FC B Pulimas SL Agroveco Tecnocsas utebo', 'Equipo A2', 'Equipo A3', 'Equipo A4'] },
     { id: 'B', name: 'Grupo B', teams: ['Equipo B1', 'Equipo B2', 'Equipo B3', 'Equipo B4'] },
     { id: 'C', name: 'Grupo C', teams: ['Equipo C1', 'Equipo C2', 'Equipo C3', 'Equipo C4'] },
     { id: 'D', name: 'Grupo D', teams: ['Equipo D1', 'Equipo D2', 'Equipo D3', 'Equipo D4'] },

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { FaCalendar, FaTrophy, FaAward, FaUserCheck, FaVideo, FaEuroSign } from "react-icons/fa";
-import { FaUsers, FaBolt, FaNewspaper  } from "react-icons/fa6";
+import { FaUsers, FaBolt, FaNewspaper } from "react-icons/fa6";
 
 interface TabsProps {
   activeTab: string;
@@ -13,7 +13,6 @@ export default function Tabs({ activeTab, setActiveTab }: TabsProps) {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    // Solo se ejecuta en el navegador
     setIsAdmin(localStorage.getItem('admin') === 'true');
   }, []);
 
@@ -29,20 +28,20 @@ export default function Tabs({ activeTab, setActiveTab }: TabsProps) {
     { id: "documents", label: "Documentos", icon: <FaNewspaper /> },
   ];
 
-  // Filtramos el tab de presupuesto si no es admin
-  const restrictedTabs = ['budget'/*, 'documents'*/]; // tabs que solo ven los admins
+  const restrictedTabs = ['budget', 'documents'];
   const visibleTabs = tabs.filter(tab => !restrictedTabs.includes(tab.id) || isAdmin);
+
   return (
     <div className="tabs-container">
       <div className="tabs-list">
-        {visibleTabs.map((tab) => (
+        {visibleTabs.map(tab => (
           <button
             key={tab.id}
             className={`tab-trigger ${activeTab === tab.id ? "active" : ""}`}
             onClick={() => setActiveTab(tab.id)}
           >
-            <i className="iconos_tab">{tab.icon}</i>
-            {tab.label}
+            <span className="iconos_tab">{tab.icon}</span>
+            <span className="tab-label">{tab.label}</span>
           </button>
         ))}
       </div>
